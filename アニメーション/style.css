@@ -1,0 +1,197 @@
+@charset "utf-8";
+
+body{
+  background-image:linear-gradient(90deg,red 50%,white 51%);
+  background-size:200px 200px;
+  }
+
+.steam01{
+  background-color: white;
+}
+.steam02{
+  background-color: white;
+}
+.steam03{
+  background-color: white;
+}
+
+.text {
+  font-size: 80px;
+  font-weight: bold;
+  overflow: hidden;
+  text-align: center;
+  color: #000;
+  text-shadow:1px 1px 0 #FFF, -1px -1px 0 #FFF,
+              -1px 1px 0 #FFF, 1px -1px 0 #FFF,
+              0px 1px 0 #FFF,  0-1px 0 #FFF,
+              -1px 0 0 #FFF, 1px 0 0 #FFF;
+}
+
+
+.text span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: slideInFromBottom 0.5s forwards;
+  animation-delay: 1s; /* 0.1秒ずつ遅延して表示 */
+}
+
+@keyframes slideInFromBottom {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in {
+  font-size: 80px;
+  font-weight: bold;
+  animation: slideIn 10s ease-out;
+  text-align: center;
+  color: #000;
+  text-shadow:1px 1px 0 #FFF, -1px -1px 0 #FFF,
+              -1px 1px 0 #FFF, 1px -1px 0 #FFF,
+              0px 1px 0 #FFF,  0-1px 0 #FFF,
+              -1px 0 0 #FFF, 1px 0 0 #FFF;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* 湯気 */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box
+}
+@keyframes steam01 {
+  0% {
+    bottom: -600px;
+    filter: blur(16px);
+    transform: rotateY(0deg);
+    transform: scale(0.6, 1);
+    opacity: 0
+  }
+  11% { opacity: 0.1 }
+  33% {
+    transform: rotateY(40deg);
+    transform: scale(1, 1.4);
+    opacity: 0.5
+  }
+  66% {
+    transform: rotateY(10deg);
+    transform: scaleY(1.8, 1);
+    opacity: 0.4
+  }
+  100% {
+    bottom: 0;
+    filter: blur(20px);
+    transform: rotateY(60deg);
+    transform: scaleY(2, 1.8);
+    opacity: 0
+  }
+}
+@keyframes steam02 {
+  0% {
+    bottom: -400px;
+    filter: blur(16px);
+    transform: rotateY(0deg);
+    transform: scale(0.6, 0.6);
+    opacity: 0
+  }
+  11% { opacity: 0.1 }
+  33% {
+    transform: rotateY(40deg);
+    transform: scale(0.8, 1);
+    opacity: 0.4
+  }
+  66% {
+    transform: rotateY(2deg);
+    transform: scaleY(1, 1.2)
+  }
+  100% {
+    bottom: 0;
+    filter: blur(20px);
+    transform: rotateY(50deg);
+    transform: scaleY(1.2, 1.4);
+    opacity: 0
+  }
+}
+.steamWrap {
+  width: 740px;
+  margin: 100px auto 0
+}
+.steamBox {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden
+}
+.steamBox > img {
+  width: 100%;
+  display: block
+}
+.steam01 {
+  position: absolute;
+  right: 0;
+  animation: steam01 10s infinite linear;
+  opacity: 0
+}
+.steam02 {
+  position: absolute;
+  left: 0;
+  animation: steam02 14s infinite linear;
+  opacity: 0
+}
+.steam03 {
+  margin: auto;
+  position: absolute;
+  right: 0;
+  left: 0;
+  animation: steam02 12s infinite linear;
+  animation-delay: 6s;
+  opacity: 0
+}
+.steam01 img, .steam03 img {
+  width: 532px;
+  height: 800px
+}
+.steam02 img {
+  width: 399px;
+  height: 600px
+}
+
+@keyframes steam01 {
+  0% {
+    bottom: -600px;
+    filter: blur(16px);
+    transform: rotateY(0deg);
+    transform: scale(0.6, 1);
+    opacity: 0
+  }
+  11% { opacity: 0.1 }
+  33% {
+    transform: rotateY(40deg);
+    transform: scale(1, 1.4);
+    opacity: 0.5
+  }
+  66% {
+    transform: rotateY(10deg);
+    transform: scaleY(1.8, 1);
+    opacity: 0.4
+  }
+  100% {
+    bottom: 0;
+    filter: blur(20px);
+    transform: rotateY(60deg);
+    transform: scaleY(2, 1.8);
+    opacity: 0
+  }
+}
